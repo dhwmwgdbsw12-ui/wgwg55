@@ -1,0 +1,78 @@
+@charset "UTF-8";
+.body{font-family: Arial,sans-serif;}
+
+.container{width: 100%;height: 100vh; background:url(../imgs/pexels-christmas-background-1869902_640.jpg) center center no-repeat; background-size:cover; overflow: hidden;position: relative;}
+.logo{color: #fff;text-align: center;position: absolute; left: 4vw; top: 6vh;}
+.logo>p:nth-child(1){font-size: 36px; font-weight: bold;letter-spacing: 1px;}
+.logo>p:nth-child(2){font-size: 12px;letter-spacing: 1px;}
+.m_btn{color: #fff; position: absolute; right: 4vw; top: 6vh; font-size: 30px; background: none;padding: 20px;}
+.copy{color: #fff;position: absolute; bottom: 3vh; left: 0; right: 0; text-align: center;}
+/*contents*/
+.contents{position: absolute; width: 20vw;height: 65vh;left: 50%; margin-left: -10vw;top: 50%;
+margin-top: -32vh;}
+.box{position: absolute; left: 0; top: 0; width: 100%;height: 100%;}
+.inner{width: 100%;height: 100%; background-color: #07145c; box-sizing: border-box; padding: 5vh 2.5vw 7vh; border-radius: 10px; box-shadow:10px 10px 30px rgba(0,0,0,0.2);display: flex; flex-direction: column; justify-content: space-between; align-items:center;color: #fff;}
+.imgbox{width: 15vw;height: 15vw;margin-top: 20px; border-radius: 50%;position: relative;background-repeat: no-repeat; background-size: cover; background-position: center center;}
+.box1 .imgbox{background-image: url(../imgs/geralt-christmas-9276268_640.jpg);}
+.box2 .imgbox{background-image: url(../imgs/ylanite_nietjuhart-snowmen-8406385_640.jpg);}
+.box3 .imgbox{background-image: url(../imgs/darkmoon_art-christmas-4427824_640.jpg);}
+.box4 .imgbox{background-image: url(../imgs/garten-gg-christmas-market-550323_640.jpg);}
+.box5 .imgbox{background-image: url(../imgs/vladvictoria-christmas-4705310_640.jpg);}
+.box6 .imgbox{background-image: url(../imgs/publicdomainpictures-christmas-bauble-15738_640.jpg);}
+.box7 .imgbox{background-image: url(../imgs/geralt-christmas-9276268_640.jpg);}
+.box8 .imgbox{background-image: url(../imgs/vladvictoria-christmas-4705310_640.jpg);}
+
+.dot{width: 3vw;height: 3vw;border-radius: 50%; background-color: #e4f1ff;box-shadow: inset 5px 5px 10px rgba(0,0,0,0.1);position: absolute; z-index: 3;left: 50%;top: 50%; margin: -1.5vw; margin-top: -1.5vw;}
+.inner p:nth-of-type(1){font-size: 26px;}
+.inner p:nth-of-type(2){text-align: center; font-size: 14px;color: #999;}
+.btns{display: flex;justify-content: space-around;width: 100%;}
+.btns>li{font-size: 24px; cursor: pointer;transition: all 0.5s;}
+.btns>li:nth-child(1),.btns>li:nth-child(3){color: #666;} 
+.btns>li:hover{transform: scale(1.3);}
+.imgbox::before{content:"";display: block;width: 100%;height: 100%;background-image: inherit; border-radius: 50%; filter: blur(20px) brightness(1.6);position: absolute;top: 10%;}
+.imgbox::after{content: "";display: block;width: 100%;height: 100%;background-image: inherit; border-radius: 50%;position: absolute;}
+
+/*위치조정*/
+.inner{opacity: 0.6; transform: scale(0.85);transition: all 0.7s;}
+.on .inner{opacity: 1; transform: scale(1);}
+
+.box1{transform: rotate(0deg)translateY(-100vh);}
+.box2{transform: rotate(45deg)translateY(-100vh);}
+.box3{transform: rotate(90deg)translateY(-100vh);}
+.box4{transform: rotate(135deg)translateY(-100vh);}
+.box5{transform: rotate(180deg)translateY(-100vh);}
+.box6{transform: rotate(225deg)translateY(-100vh);}
+.box7{transform: rotate(270deg)translateY(-100vh);}
+.box8{transform: rotate(315deg)translateY(-100vh);}
+
+.contents{top: 142%; margin-top: -25vh; transition: all 0.5s;}
+
+/*동작구현*/
+.on .active{animation: rote 5s infinite linear;}
+@keyframes rote{
+100% {transform:rotate(360deg);}   
+}
+.on .stop{animation-play-state: paused;}
+
+/*이전 - 다음버튼*/
+.btn{width: 60px; height: 60px;position: fixed; top: 50%; z-index: 10; color: #fff; display: flex;font-size: 13px; cursor: pointer;align-items: center;}
+.btn::before{content: "";width: 60px;border-top: 1px solid #fff;position: absolute;}
+.btn::after{content: "";width: 60px;border-top: 1px solid #fff;position: absolute;}
+.btn_prev{left: 32vw;}
+.btn_prev::before{transform-origin: right center; transition: all 0.5s; left: -130%;}
+.btn_prev::after{transform-origin: right center;transition: all 0.5s; left: -130%;}
+.btn_prev:hover::before{transform: rotate(-150deg);}
+.btn_prev:hover::after{transform: rotate(150deg);}
+.btn_prev>span{transition: all 0.5s;}
+.btn_prev:hover>span{transform: translate(100%,0);opacity: 0;}
+
+.btn_next{right: 32vw; text-align: right;}
+.btn_next::before{transform-origin: left center; transition: all 0.5s; right: -130%;}
+.btn_next::after{transform-origin: left center;transition: all 0.5s; right: -130%;}
+.btn_next:hover::before{transform: rotate(-150deg);}
+.btn_next:hover::after{transform: rotate(150deg);}
+.btn_next>span{transition: all 0.5s;}
+.btn_next:hover>span{transform: translate(-100%,0);opacity: 0;}
+
+
+
